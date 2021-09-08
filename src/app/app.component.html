@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<div class="pt-3 ps-5 pe-5 pb-3 grid">
+  <form class="d-flex">
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [formControl]="key_word"
+    />
+    <button
+      class="btn btn-outline-success"
+      type="submit"
+      (click)="handleClickWithFile()"
+    >
+      Search
+    </button>
+  </form>
+</div>
+<div class="ps-2 pe-2">
+  <div *ngIf="loading === true" class="d-flex justify-content-center">
+    <div class="spinner-border spinner-border m-5" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="ps-5 pe-5 pb-4 row">
+    <h2 class="text-left">
+      Google Maps
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-map"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"
+        />
+      </svg>
+    </h2>
+    <div #mapRef class="maps map col-8"></div>
+    <div class="col content">
+      <h4 class="text-left p-1">
+        Languages <span class="material-icons"> language </span>
+      </h4>
+      <ul>
+        <li *ngFor="let recipient of langMap | keyvalue" class="p-1">
+          <div class="card">
+            <div class="card-body">
+              <!-- <i class="box"></i> -->
+              {{ recipient.key }} : {{ recipient.value }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

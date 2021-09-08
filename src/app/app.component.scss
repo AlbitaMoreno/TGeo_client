@@ -1,0 +1,28 @@
+.maps {
+  height: 600px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+.map {
+  width: 85%;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+.box {
+  float: right;
+  height: 10px;
+  width: 10px;
+  margin-bottom: 15px;
+  clear: both;
+}
+.content {
+  height: 60vh;
+  overflow: auto;
+}
